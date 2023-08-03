@@ -11,8 +11,14 @@
      <button class="js-subscribe" onclick=" subscribe()" >subscribe</button>
 
      <p>Amazonshipping calculator</p>
-     <input type="number">
-     <button>calculate</button>
+
+     
+        <input class="js-cost-input" type="number" placeholder="cost of product">
+        <button onclick="calculatetotal()" >calculate</button>
+     
+
+     <p class="js-total"></p>
+     
      
      
 
@@ -27,7 +33,23 @@
           btnElement.innerHTML = `subscribe`
         }
         }
-      
+
+
+        // script for amazon calculator
+        function calculatetotal(){
+            document.querySelector(`.js-cost-input`);
+            const inputElement =  document.querySelector(`.js-cost-input`);
+           let cost = inputElement.value ;
+
+           if(cost < 40){
+            cost = cost + 10
+           }else{
+            cost = cost
+           }
+
+           document.querySelector(`.js-total`).innerHTML = `$${cost}`
+        }
+           
     </script>
 </body>
 </html>
