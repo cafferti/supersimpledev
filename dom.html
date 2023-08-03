@@ -13,7 +13,7 @@
      <p>Amazonshipping calculator</p>
 
      
-        <input class="js-cost-input" type="number" placeholder="cost of product">
+        <input class="js-cost-input" onkeydown="runonclickenterkey(event) " type="number" placeholder="cost of product">
         <button onclick="calculatetotal()" >calculate</button>
      
 
@@ -23,6 +23,11 @@
      
 
     <script>
+       
+        // console.log(typeof String(25))converting number to string
+        // Number(inputElement.value)converts to number
+
+         
 
         function subscribe(){
             const btnElement = document.querySelector(`.js-subscribe`);
@@ -39,7 +44,7 @@
         function calculatetotal(){
             document.querySelector(`.js-cost-input`);
             const inputElement =  document.querySelector(`.js-cost-input`);
-           let cost = inputElement.value ;
+            let cost = Number(inputElement.value) ;
 
            if(cost < 40){
             cost = cost + 10
@@ -49,7 +54,15 @@
 
            document.querySelector(`.js-total`).innerHTML = `$${cost}`
         }
+
+        function runonclickenterkey(event){
+
+            if(event.key === `Enter`){
+            calculatetotal()
+          }
+        
+        }
            
     </script>
 </body>
-</html>
+</html> 
