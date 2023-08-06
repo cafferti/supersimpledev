@@ -19,9 +19,11 @@
 
         .game-icons{
             background-color: inherit;
-            border: 1px solid white;
+            border: 2px solid white;
             padding: 2rem;
             border-radius: 10rem;
+            margin-inline: 0.4rem;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -32,8 +34,12 @@
     <button class="game-icons" onclick="argument('scissors')"><img class="gameimg"  src="./scissors-emoji.png" alt=""></button>
     <button class="game-icons" onclick="argument('paper')"><img class="gameimg" src="./paper-emoji.png" alt=""></button>
    
-    <p class="js-result"></p >
-    <p class="js-moves"></p>
+    <p class="js-result">you win</p >
+    <p class="js-moves"><img src="" alt="">you
+       <img class="gameimg" src="./rock-emoji.png" alt="">
+       <img class="gameimg" src="./scissors-emoji.png" alt="">
+       computer
+    </p>
     <p class="stats"></p>
     <button onclick="reset()">reset score</button>
     
