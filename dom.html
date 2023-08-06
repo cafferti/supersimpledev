@@ -6,7 +6,15 @@
     <title> Dom Project</title>
 
     <style>
+
+       body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+
         .subscribe-btn{
+            margin-block-end: 1rem;
             font-size: 15px;
            border: none;
            color: white;
@@ -21,6 +29,21 @@
             background-color: aliceblue;
             color: rgb(5, 5, 5);
         }
+
+        .cost-input{
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .calculatecss{
+            padding: 12px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
@@ -31,8 +54,8 @@
      <p>Amazonshipping calculator</p>
 
      
-        <input class="js-cost-input" onkeydown="runonclickenterkey(event) " type="number" placeholder="cost of product">
-        <button onclick="calculatetotal()" >calculate</button>
+        <input class="js-cost-input cost-input" onkeydown="runonclickenterkey(event) " type="number" placeholder="cost of product">
+        <button class="calculatecss" onclick="calculatetotal()" >calculate</button>
      
 
      <p class="js-total"></p>
