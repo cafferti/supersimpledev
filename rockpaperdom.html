@@ -11,16 +11,28 @@
             background-color: rgb(7, 7, 7);
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        .gameimg{
+            height: 50px;
+            width: 50px;
+        }
+
+        .game-icons{
+            background-color: inherit;
+            border: 1px solid white;
+            padding: 2rem;
+            border-radius: 10rem;
+        }
     </style>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
     
-    <button onclick="argument('rock')">rock</button>
-    <button onclick="argument('scissors')">scissors</button>
-    <button onclick="argument('paper')">paper</button>
+    <button class="game-icons" onclick="argument('rock')"><img class="gameimg"  src="./rock-emoji.png" alt=""></button>
+    <button class="game-icons" onclick="argument('scissors')"><img class="gameimg"  src="./scissors-emoji.png" alt=""></button>
+    <button class="game-icons" onclick="argument('paper')"><img class="gameimg" src="./paper-emoji.png" alt=""></button>
    
-    <p class="js-result"></p>
+    <p class="js-result"></p >
     <p class="js-moves"></p>
     <p class="stats"></p>
     <button onclick="reset()">reset score</button>
