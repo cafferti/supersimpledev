@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dom Project</title>
+
+    <style>
+        .subscribe-btn{
+           border: none;
+           color: white;
+           padding: 0.6rem;
+           background-color: black;
+           border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
 
     <p>youtube subscribe button</p>
-     <button class="js-subscribe" onclick=" subscribe()" >subscribe</button>
+     <button class="js-subscribe subscribe-btn" onclick=" subscribe()" >subscribe</button>
 
      <p>Amazonshipping calculator</p>
 
@@ -26,6 +36,8 @@
        
         // console.log(typeof String(25))converting number to string
         // Number(inputElement.value)converts to number
+
+        console.log(window.document)
 
          
 
