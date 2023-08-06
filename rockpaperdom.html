@@ -25,6 +25,25 @@
             margin-inline: 0.4rem;
             cursor: pointer;
         }
+
+        .result{
+            font-size: 30px;
+            font-weight:bold;
+            margin-top: 50px;
+        }
+
+        .score{
+            margin-top: 60px;
+
+        }
+
+        .reset-btn{
+            background-color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+
+        }
     </style>
 </head>
 <body>
@@ -33,15 +52,10 @@
     <button class="game-icons" onclick="argument('rock')"><img class="gameimg"  src="./rock-emoji.png" alt=""></button>
     <button class="game-icons" onclick="argument('scissors')"><img class="gameimg"  src="./scissors-emoji.png" alt=""></button>
     <button class="game-icons" onclick="argument('paper')"><img class="gameimg" src="./paper-emoji.png" alt=""></button>
-   
-    <p class="js-result">you win</p >
-    <p class="js-moves"><img src="" alt="">you
-       <img class="gameimg" src="./rock-emoji.png" alt="">
-       <img class="gameimg" src="./scissors-emoji.png" alt="">
-       computer
-    </p>
-    <p class="stats"></p>
-    <button onclick="reset()">reset score</button>
+    <p class="js-result result"></p >
+    <p class="js-moves"><img src="" alt=""></p>
+    <p class="stats score"></p>
+    <button class="reset-btn" onclick="reset()">Reset score</button>
     
     
 
@@ -113,7 +127,11 @@
 
 
             document.querySelector(`.js-result`).innerHTML = `you ${result}`
-            document.querySelector(`.js-moves`).innerHTML = `you ${playermove} - computer ${cmpick}`
+            document.querySelector(`.js-moves`).innerHTML = 
+            ` you
+       <img class="gameimg" src="./${playermove}-emoji.png" alt="">
+       <img class="gameimg" src="./${cmpick}-emoji.png" alt="">
+       computer`
 
 
             localStorage.setItem('score', JSON.stringify(score));
