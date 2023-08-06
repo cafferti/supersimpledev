@@ -7,11 +7,19 @@
 
     <style>
         .subscribe-btn{
+            font-size: 15px;
            border: none;
            color: white;
            padding: 0.6rem;
            background-color: black;
+           font-weight: bold;
            border-radius: 20px;
+           cursor: pointer;
+        }
+
+        .unsetcss{
+            background-color: aliceblue;
+            color: rgb(5, 5, 5);
         }
     </style>
 </head>
@@ -45,9 +53,12 @@
             const btnElement = document.querySelector(`.js-subscribe`);
 
         if(btnElement.innerHTML ===  `subscribe`){
-         btnElement.innerHTML = `subscribed`    
+         btnElement.innerHTML = `subscribed`
+         btnElement.classList.add(`unsetcss`)    
           }else {
           btnElement.innerHTML = `subscribe`
+          btnElement.classList.remove(`unsetcss`)    
+
         }
         }
 
