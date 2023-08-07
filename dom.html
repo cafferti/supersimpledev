@@ -43,6 +43,9 @@
             font-size: 15px;
             cursor: pointer;
         }
+        .error{
+            color: red;
+        }
 
     </style>
 </head>
@@ -69,15 +72,15 @@
         // Number(inputElement.value)converts to number
 
         console.log(window.document)
-
+        
          
 
         function subscribe(){
             const btnElement = document.querySelector(`.js-subscribe`);
 
         if(btnElement.innerHTML ===  `subscribe`){
-         btnElement.innerHTML = `subscribed`
-         btnElement.classList.add(`unsetcss`)    
+          btnElement.innerHTML = `subscribed`
+          btnElement.classList.add(`unsetcss`)    
           }else {
           btnElement.innerHTML = `subscribe`
           btnElement.classList.remove(`unsetcss`)    
@@ -92,13 +95,21 @@
             const inputElement =  document.querySelector(`.js-cost-input`);
             let cost = Number(inputElement.value) ;
 
-           if(cost < 40){
-            cost = cost + 10
-           }else{
-            cost = cost
-           }
-
+        if (cost < 40 && cost > 0) {
+           cost = cost + 10;
+           document.querySelector(`.js-total`).classList.remove(`error`)
            document.querySelector(`.js-total`).innerHTML = `$${cost}`
+
+      } else if (cost <= 0) {
+         cost = `Error: cost cannot be less than 0`;
+         document.querySelector(`.js-total`).classList.add(`error`)
+         document.querySelector(`.js-total`).innerHTML = `${cost}`
+      }else{
+        document.querySelector(`.js-total`).innerHTML = `$${cost}`
+        document.querySelector(`.js-total`).classList.remove(`error`)
+
+      }
+
         }
 
         function runonclickenterkey(event){
